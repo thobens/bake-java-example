@@ -1,0 +1,12 @@
+ingredients:
+- name: 'artifactId'
+- name: 'groupId'
+- name: 'version'
+  value: '0.0.1-SNAPSHOT'
+- name: 'package'
+  value: '{{ .groupId }}.{{ .artifactId }}'
+- name: 'packageDir'
+  value: '{{ .package | explode "." }}'
+  skip: true
+- name: 'mainClass'
+  value: '{{ .artifactId | title }}'
